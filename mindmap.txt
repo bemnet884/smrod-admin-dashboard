@@ -1,0 +1,62 @@
+{
+  "project_structure": {
+    "mind_map_visualization": "See Mermaid diagram below",
+    "phases": [
+      {
+        "phase_id": 1,
+        "name": "Foundation & Configuration",
+        "focus": "Types, API Client, UI Libs",
+        "steps": [
+          "Define TypeScript Interfaces (Vehicle, User, Telemetry)",
+          "Setup Axios with Interceptors (JWT Handling)",
+          "Install Shadcn UI & Tailwind",
+          "Configure TanStack Query (React Query)"
+        ]
+      },
+      {
+        "phase_id": 2,
+        "name": "Authentication & Layout",
+        "focus": "Security, Navigation",
+        "steps": [
+          "Login Page (/auth/login)",
+          "Next.js Middleware (Route Protection)",
+          "Dashboard Layout (Sidebar, Header)",
+          "User Profile State (Zustand/Context)"
+        ]
+      },
+      {
+        "phase_id": 3,
+        "name": "Fleet Management (CRUD)",
+        "focus": "Data Tables, Forms",
+        "steps": [
+          "Vehicle List Table (Filtering, Sorting)",
+          "Owner Invite Form (/admin/owner-invite)",
+          "Vehicle Registration Wizard",
+          "Driver Assignment Modal"
+        ]
+      },
+      {
+        "phase_id": 4,
+        "name": "Live Operations (The Map)",
+        "focus": "Real-time, WebSocket",
+        "steps": [
+          "Leaflet/Mapbox Integration",
+          "WebSocket Hook (Socket.io)",
+          "Live Telemetry Markers",
+          "Geofence Drawing Tools"
+        ]
+      },
+      {
+        "phase_id": 5,
+        "name": "Action Center",
+        "focus": "Alerts, Commands",
+        "steps": [
+          "Command Interface (Unlock/Kill Engine)",
+          "Alert Feed (Crash/Tamper)",
+          "Audit Logs",
+          "Analytics Charts"
+        ]
+      }
+    ]
+  }
+}

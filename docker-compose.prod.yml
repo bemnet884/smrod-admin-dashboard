@@ -1,0 +1,21 @@
+services:
+  admin-dashboard:
+    image: ${DOCKER_REGISTRY:-ghcr.io}/${IMAGE_NAME:-sm-rod/admin-dashboard}:${IMAGE_TAG:-main}
+    container_name: smrod-admin-dashboard
+    restart: always
+    env_file:
+      - .env 
+    environment:
+      # nginx-proxy settings
+      VIRTUAL_HOST: admin.smrod.site
+      VIRTUAL_PORT: 3000
+      LETSENCRYPT_HOST: admin.smrod.site
+      LETSENCRYPT_EMAIL: ${LETSENCRYPT_EMAIL}
+      NEXT_PUBLIC_API_URL: https://api.smrod.site
+      NEXT_PUBLIC_GOOGLE_MAPS_API_KEY: ${NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}
+    networks:
+      - webgateway
+
+networks:
+  webgateway:
+    external: true

@@ -1,0 +1,176 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* =========================
+THEME TOKEN BRIDGE (shadcn)
+========================= */
+
+@theme inline {
+--color-background: var(--background);
+--color-foreground: var(--foreground);
+
+--color-card: var(--card);
+--color-card-foreground: var(--card-foreground);
+
+--color-popover: var(--popover);
+--color-popover-foreground: var(--popover-foreground);
+
+--color-primary: var(--primary);
+--color-primary-foreground: var(--primary-foreground);
+
+--color-secondary: var(--secondary);
+--color-secondary-foreground: var(--secondary-foreground);
+
+--color-muted: var(--muted);
+--color-muted-foreground: var(--muted-foreground);
+
+--color-accent: var(--accent);
+--color-accent-foreground: var(--accent-foreground);
+
+--color-destructive: var(--destructive);
+
+--color-border: var(--border);
+--color-input: var(--input);
+--color-ring: var(--ring);
+
+--radius-sm: calc(var(--radius) - 4px);
+--radius-md: calc(var(--radius) - 2px);
+--radius-lg: var(--radius);
+--radius-xl: calc(var(--radius) + 4px);
+--radius-2xl: calc(var(--radius) + 8px);
+}
+
+/* =========================
+LIGHT THEME
+========================= */
+
+:root {
+--radius: 0.75rem;
+
+/* ===== Palette ===== */
+--slate-950: oklch(0.12 0.02 265);
+--slate-900: oklch(0.22 0.03 265);
+--slate-800: oklch(0.30 0.035 265);
+--slate-700: oklch(0.40 0.04 265);
+--slate-600: oklch(0.50 0.045 265);
+--slate-500: oklch(0.60 0.05 265);
+--slate-400: oklch(0.70 0.04 265);
+--slate-300: oklch(0.82 0.035 265);
+--slate-200: oklch(0.92 0.025 265);
+--slate-100: oklch(0.96 0.01 265);
+--slate-50: oklch(0.985 0.005 265);
+
+/* ===== Base ===== */
+--background: var(--slate-50);
+--foreground: oklch(0.18 0 0);
+
+/* ===== Surface ===== */
+--card: oklch(1 0 0);
+--card-foreground: var(--foreground);
+
+--popover: var(--card);
+--popover-foreground: var(--foreground);
+
+/* ===== Brand ===== */
+--primary: var(--slate-900);
+--primary-foreground: var(--slate-50);
+
+--secondary: oklch(0.72 0.17 155);
+--secondary-foreground: oklch(0.15 0 0);
+
+/* ===== Subtle Surfaces ===== */
+--muted: var(--slate-100);
+--muted-foreground: var(--slate-500);
+
+--accent: var(--slate-200);
+--accent-foreground: var(--slate-900);
+
+/* ===== Status ===== */
+--destructive: oklch(0.62 0.23 25);
+
+/* ===== UI ===== */
+--border: var(--slate-200);
+--input: var(--slate-200);
+--ring: var(--primary);
+}
+
+/* =========================
+DARK THEME
+========================= */
+
+.dark {
+--background: var(--slate-950);
+--foreground: oklch(0.96 0 0);
+
+--card: var(--slate-900);
+--card-foreground: var(--foreground);
+
+--popover: var(--slate-900);
+--popover-foreground: var(--foreground);
+
+--primary: var(--slate-200);
+--primary-foreground: var(--slate-900);
+
+--secondary: oklch(0.7 0.18 150);
+--secondary-foreground: oklch(0.15 0 0);
+
+--muted: var(--slate-800);
+--muted-foreground: var(--slate-400);
+
+--accent: var(--slate-800);
+--accent-foreground: var(--foreground);
+
+--border: var(--slate-800);
+--input: var(--slate-800);
+--ring: var(--primary);
+}
+
+/* =========================
+BASE
+========================= */
+
+@layer base {
+
+* {
+  @apply border-border outline-ring/40;
+  }
+
+body {
+@apply bg-background text-foreground;
+}
+}
+
+/* =========================
+COMPONENT UTILITIES
+========================= */
+
+@layer components {
+.glass {
+@apply bg-card/70 backdrop-blur-md border border-border shadow-xl;
+}
+
+.glow-primary {
+box-shadow: 0 0 22px -6px var(--primary);
+}
+
+.glow-secondary {
+box-shadow: 0 0 22px -6px var(--secondary);
+}
+}
+
+/* =========================
+ANIMATIONS
+========================= */
+
+@keyframes float {
+0% { transform: translateY(0px); }
+50% { transform: translateY(-6px); }
+100% { transform: translateY(0px); }
+}
+
+.animate-float {
+animation: float 3s ease-in-out infinite;
+}
