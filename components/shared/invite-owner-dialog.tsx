@@ -65,7 +65,7 @@ export function InviteOwnerDialog() {
         });
 
         // Show the manual link inside the dialog before closing
-        const manualLink = `http://localhost:3000/register?token=${inviteData?.token}`;
+        const manualLink = `${window.location.origin}/register?token=${inviteData?.token}`;
         console.log("MANUAL LINK:", manualLink);
         alert(`Message system offline. Copy this link to register:\n\n${manualLink}`);
       }

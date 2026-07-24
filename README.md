@@ -56,7 +56,7 @@ The **SM-ROD Admin Dashboard** is a high-performance IoT fleet management and ve
 3. Set up environment variables:
    Create a `.env.local` file in the root:
    ```env
-   NEXT_PUBLIC_API_URL=http://localhost:3000
+   NEXT_PUBLIC_API_URL=https://backend-vr5u.onrender.com
    ```
 4. Run the development server:
    ```bash

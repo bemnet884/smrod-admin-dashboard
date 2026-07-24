@@ -1,7 +1,7 @@
 import axios, { AxiosError, InternalAxiosRequestConfig } from "axios";
 import Cookies from "js-cookie"; // Import this!
 
-const baseURL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3000";
+const baseURL = process.env.NEXT_PUBLIC_API_URL || "https://backend-vr5u.onrender.com";
 
 const api = axios.create({
   baseURL,
